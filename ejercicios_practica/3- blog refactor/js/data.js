@@ -1,17 +1,5 @@
 "use strict";
 
-/* Tarea
- * Objetivos: adquirir herramientas y poner
- * en práctica lo visto en clase
- */
-
-/* Enunciado
-
-Transforme el array de objetos de posteos brindado como 
-variable "data" y cree una lista de protitopos Post
-
-*/
-
 const data = [
     {
       titulo: "Einstein y su intelecto",
@@ -46,42 +34,3 @@ const data = [
               no sea un problema.`
     }
   ]
-
-/*
-
-1 - Primero arme su prototipo "Post" el cual deberá recibir como parámetro
---> titulo
---> avatar
---> texto
-
-*/
-
-function Post(titulo, avatar, texto) {
-  this.titulo = titulo;
-  this.avatar = avatar;
-  this.texto = texto;
-
-  this.all = () => {
-    return this.titulo + " " + this.avatar + " " + this.texto
-  }
-}
-
-
-
-
-
-/*
-
-2 - Utilice un bucle para recorrer "data" y en cada iteración:
---> Genere un objeto del prototipo con los datos del objeto de esa iteración
---> Almacene el objeto generado dentro de una lista "posts"
-
-*/
-
-let posts = []
-for ( let card in data ){
-  let post = new Post(data[card].titulo, data[card].avatar, data[card].texto);
-  posts.push(post)
-}
-
-console.log(posts)

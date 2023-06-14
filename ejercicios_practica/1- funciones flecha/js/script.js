@@ -15,13 +15,21 @@ Verifique que en consola no figura ningún error en alguna de ellas
 console.log("Declaración de eventos");
 const boton = document.querySelector("button");
 
-boton.addEventListener("click", function() {
-    boton.className = "btnClick";
-});
+// boton.addEventListener("click", function() {
+//     boton.className = "btnClick";
+// });
 
-boton.addEventListener("mouseout", function() {
-    boton.className = "btnOut";
-});
+boton.addEventListener("click" , () => {
+    boton.className = "btnClick"
+})
+
+// boton.addEventListener("mouseout", function() {
+//     boton.className = "btnOut";
+// });
+
+boton.addEventListener("mouseout", () =>{
+    boton.className = "btnOut"
+})
 
 console.log("Declaración de función una función común");
 function nombreCompleto(nombre, apellido) {
@@ -31,12 +39,24 @@ function nombreCompleto(nombre, apellido) {
 
 console.log(nombreCompleto("Max", "Power"));
 
+let completeName = (nombre , apellido) => {
+    const completo = nombre + " " + apellido;
+    console.log(completo) 
+}
+
+completeName("Max", "Power")
+
 console.log("Declaración de función anónima");
 const iniciales = function (nombre, apellido) {
     return nombre[0].toUpperCase() + "_" + apellido[0].toUpperCase();
 }
 
 console.log(iniciales("Jean", "Grey"));
+
+const initials = (nombre, apellido) => {
+    return nombre[0].toUpperCase() + " " + apellido[0].toUpperCase();
+}
+console.log(initials("jean", "grey"))
 
 /* 2 - Enunciado
 
@@ -49,3 +69,7 @@ sino que debe utilizarse como variable global.
 */
 
 const colores = ["azul", "verde", "amarillo", "rojo"];
+
+colores.forEach(color =>{
+    console.log(color);
+})
